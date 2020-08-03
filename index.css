@@ -102,6 +102,7 @@ h1 {
   width: 100%;
   color: white;
   background-color: white;
+  margin-bottom: -9px;
 }
 
 #timer {
@@ -262,6 +263,24 @@ h1 {
   border-radius: 25%;
   background-color: #1780e9;
   cursor: pointer;
+}
+
+#timeWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+#timeProgress {
+  width: 20%;
+  background-color: #ddd;
+}
+
+#timeBar {
+  width: 0%;
+  height: 3px;
+  background-color: #1780e9;
 }
 
 @media (prefers-color-scheme: dark) {

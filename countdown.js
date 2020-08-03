@@ -19,8 +19,8 @@ const headlineEl = document.getElementById("headline");
 let headline = "🕓 Countdown 🕗";
 const FinishInputEl = document.getElementById("FinishInput");
 let finishMessage = "Time is up!";
-
-console.log(settingsElisShown);
+const timeBarEl = document.getElementById("timeBar");
+let width = 0;
 
 function startCountdown() {
   if (hasTime == false || InputEl.value != startingMinutes) {
@@ -34,7 +34,6 @@ function startCountdown() {
     }
 
     time = startingMinutes * 60;
-    console.log(startingMinutes);
   }
 
   if (isStarted == false) {
@@ -71,7 +70,6 @@ function restartCountdown() {
 }
 
 function updateCountdown() {
-  console.log(time);
   let seconds = time % 60;
   let minutes = Math.floor((time / 60) % 60);
   let hours = Math.floor(time / 3600);
@@ -139,4 +137,18 @@ function updateFinishMessage() {
   if (finishMessage == "") {
     finishMessage = "Time is up!";
   }
+}
+
+updateTimeBarInterval = setInterval(updateTimeBar, 1);
+
+function updateTimeBar() {
+  let width = 100 / (60 / ((time % 60) + 1));
+  if (width > 100) {
+    clearInterval(updateTimeBarInterval);
+  } else if (width == 1.6666666666666667) {
+    width = 0;
+  } else {
+    timeBarEl.style.width = width + "%";
+  }
+  console.log(width);
 }
