@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Countdown App</title>
+    <link rel="stylesheet" href="index.css" />
+    <script defer src="timer.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+  </head>
+  <body>
+    <div id="settings">
+      <h2 id="settingsHeadline">Settings</h2>
+      <div id="settingsContent">
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+      </div>
+    </div>
+    <button id="trpBtn" type="button" onclick="manageSettings()"><img height="48" width="48" src="images/settings.png" /></button>
+    <center>
+      <div id="topMenu">
+        <a href="index.html"><ion-icon title="Coundown" id="menuItem" name="alarm-outline"></ion-icon></a>
+        <div id="vertical"></div>
+        <a href="timer.html"><ion-icon title="Timer" id="selectedMenuItem" name="timer-outline"></ion-icon></a>
+      </div>
+    </center>
+    <h1 id="headline">🕓 Timer 🕗</h1>
+    <!--<a href="timer.html">Timer</a>-->
+    <p id="timer">00:00:00</p>
+    <div class="btnContainer">
+      <button id="Btn" type="button" onclick="startTimer()"><ion-icon name="play-circle-outline"></ion-icon>Start</button>
+      <button id="Btn" type="button" onclick="stopTimer()"><ion-icon name="stop-circle-outline"></ion-icon>Stop</button>
+      <button id="Btn" type="button" onclick="restartTimer()"><ion-icon name="reload-circle-outline"></ion-icon>Restart</button>
+    </div>
+  </body>
+</html>

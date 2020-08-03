@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+body {
+  opacity: 0;
+  font-family: Arial, sans-serif;
+  margin: auto;
+  max-width: 100%;
+  animation: onLoad 0.8s forwards 0.3s ease-in-out;
+}
+
+@keyframes onLoad {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#settingsDescription {
+  padding: 0px;
+  margin: 0px;
+}
+#settingsName {
+  padding: 0px;
+  margin: 0px;
+  font-size: 20px;
+}
+
+#topMenu {
+  border: 4px solid white;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0px 0px 29px 1px rgba(30, 30, 60, 0.25);
+  width: min-content;
+  display: flex;
+  height: 84px;
+  justify-content: center;
+}
+
+#menuItem {
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+#selectedMenuItem {
+  background-color: #2196f3;
+  border: 2px solid #2196f3;
+  box-shadow: 0px 0px 26px -7px rgba(30, 30, 60, 0.5);
+  border-radius: 10px;
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+#selectedMenuItem:hover {
+  background-color: #1780e9;
+  border: 2px solid #1780e9;
+}
+
+a:visited {
+  color: black;
+}
+a:link {
+  color: black;
+}
+
+#menuItem:hover {
+  box-shadow: 0px 0px 25px -1px rgba(30, 30, 60, 0.25);
+  cursor: pointer;
+}
+
+#vertical {
+  border-left: 3px solid #dadada;
+  border-radius: 25px;
+  left: 50%;
+}
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+}
+
+#countdown {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 100px;
+  margin-top: 20px;
+  width: 100%;
+  background-color: white;
+}
+
+#timer {
+  background-color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 100px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Input {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  height: 67px;
+  width: 250px;
+  margin: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #9e9e9e;
+  box-shadow: none;
+  padding-top: 10px;
+}
+
+#Input:focus {
+  outline: none;
+  outline-width: 0;
+  border-bottom: 2px solid #9e9e9e;
+  animation: inputFocus 0.4s forwards 0s ease-in-out;
+}
+
+#Input:hover {
+  outline: none;
+  outline-width: 0;
+  border-bottom: 2px solid #686666;
+}
+
+@keyframes inputFocus {
+  0.0% {
+    border-bottom: 2px solid #9e9e9e;
+  }
+  100% {
+    border-bottom: 2px solid #2196f3;
+  }
+}
+
+#Input::-webkit-outer-spin-button,
+#Input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#Input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#Btn {
+  color: white;
+  font-size: 27px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  padding-left: 23px;
+  padding-right: 23px;
+  font-family: sans-serif;
+  display: flex;
+  margin: 5px;
+  align-items: center;
+  border: 0.01px solid #2196f3;
+  background-color: #2196f3;
+  border-radius: 5px;
+  box-shadow: 0px 6px 15px -7px rgba(30, 30, 60, 0.75);
+}
+
+#Btn:hover {
+  border: 0.01px solid #1780e9;
+  background-color: #1780e9;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 6px 15px -7px rgba(30, 30, 60, 0.9);
+}
+
+#trpBtn {
+  z-index: 2;
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  margin-top: 20px;
+}
+
+#blend {
+  z-index: 2;
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
+#settings {
+  z-index: 2;
+  position: absolute;
+  background-color: white;
+  height: 100%;
+  width: 380px;
+  box-shadow: 15px 6px 15px -7px rgba(30, 30, 60, 0.4);
+}
+
+#settingsHeadline {
+  padding-left: 70px;
+  padding-top: 10px;
+}
+
+#settingsContent {
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#settingsElement {
+  display: flex;
+  align-items: center;
+}
+
+#sliderTextSeize {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #d6d6d6;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+#sliderTextSeize::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #1780e9;
+  cursor: pointer;
+}
+
+#sliderTextSeize::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 25%;
+  background-color: #1780e9;
+  cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #323234;
+  }
+  #headline {
+    color: white;
+    background-color: #323234;
+  }
+  #countdown {
+    color: white;
+    background-color: #323234;
+  }
+  #timer {
+    color: white;
+    background-color: #323234;
+  }
+  .Input {
+    background-color: #323234;
+    color: white;
+  }
+  #topMenu {
+    background-color: #1c1c1d;
+    border-color: #1c1c1d;
+  }
+  #vertical {
+    border-color: #000000;
+  }
+  #settingsName {
+    color: white;
+  }
+  #settingsDescription {
+    color: white;
+  }
+  #settings {
+    background-color: #323234;
+  }
+  #settingsHeadline {
+    color: white;
+  }
+  #textSeizeValue {
+    color: white;
+  }
+  legend {
+    color: white;
+  }
+}
+
+.light {
+  --backgroundColor: white;
+}
+
+.dark {
+}
