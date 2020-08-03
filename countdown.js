@@ -2,7 +2,7 @@ let startingMinutes;
 const countdownEl = document.getElementById("countdown");
 const InputEl = document.getElementById("Input");
 const settingsEl = document.getElementById("settings");
-settingsElisHidden = true;
+let settingsElisShown = false;
 settingsEl.style.opacity = 0;
 const blendEl = document.getElementById("blend");
 blendEl.style.opacity = 0;
@@ -17,6 +17,10 @@ let sendNotification = false;
 const HeadlineInputEl = document.getElementById("HeadlineInput");
 const headlineEl = document.getElementById("headline");
 let headline = "🕓 Countdown 🕗";
+const FinishInputEl = document.getElementById("FinishInput");
+let finishMessage = "Time is up!";
+
+console.log(settingsElisShown);
 
 function startCountdown() {
   if (hasTime == false || InputEl.value != startingMinutes) {
@@ -26,7 +30,7 @@ function startCountdown() {
 
     if (startingMinutes != startingMinutes) {
       startingMinutes = 10;
-      document.InputEl.value = startingMinutes;
+      InputEl.value = startingMinutes;
     }
 
     time = startingMinutes * 60;
@@ -35,7 +39,11 @@ function startCountdown() {
 
   if (isStarted == false) {
     isStarted = true;
-    countdownEl.style.color = "#000000";
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      countdownEl.style.color = "#ffffff";
+    } else {
+      countdownEl.style.color = "#000000";
+    }
     clockInterval = setInterval(updateCountdown, 1000);
   }
 }
@@ -47,10 +55,10 @@ function stopCountdown() {
     clearInterval(clockInterval);
   }
   countdownEl.style.fontSize = 50;
-  console.log(countdownEl.style.fontSize);
 }
 
 function restartCountdown() {
+  stopCountdown();
   startingMinutes = InputEl.value;
   startingMinutes = parseInt(startingMinutes);
 
@@ -59,7 +67,6 @@ function restartCountdown() {
   }
 
   time = startingMinutes * 60;
-  stopCountdown();
   updateCountdown();
 }
 
@@ -84,23 +91,26 @@ function updateCountdown() {
   countdownEl.innerHTML = `${hours}:${minutes}:${seconds}`;
 
   if (hours <= 0 && minutes <= 0 && seconds <= 0) {
-    countdownEl.innerHTML = `Time is up!`;
+    countdownEl.innerHTML = finishMessage;
   } else {
     time--;
     sendNotification = false;
   }
 }
 
+manageSettings();
 function manageSettings() {
-  if (settingsElisHidden == true) {
+  if (settingsElisShown == true) {
     settingsEl.style.opacity = 100;
     blendEl.style.opacity = "30%";
+    settingsEl.style.pointerEvents = "all";
     blendEl.style.pointerEvents = "all";
-    settingsElisHidden = false;
-  } else if (settingsElisHidden == false) {
-    settingsElisHidden = true;
+    settingsElisShown = false;
+  } else if (settingsElisShown == false) {
+    settingsElisShown = true;
     settingsEl.style.opacity = 0;
     blendEl.style.opacity = 0;
+    settingsEl.style.pointerEvents = "none";
     blendEl.style.pointerEvents = "none";
   }
 }
@@ -110,7 +120,7 @@ sliderTextSeizeEl.oninput = function () {
   countdownEl.style.fontSize = this.value + "px";
 };
 
-updateHeadlineInterval = setInterval(updateHeadline, 1);
+updateHeadlineInterval = setInterval(updateHeadline, 10);
 
 function updateHeadline() {
   headline = HeadlineInputEl.value;
@@ -119,5 +129,14 @@ function updateHeadline() {
   }
   if (headline == "") {
     headlineEl.innerHTML = "🕓 Countdown 🕗";
+  }
+}
+
+updateFinishMessageInterval = setInterval(updateFinishMessage, 10);
+
+function updateFinishMessage() {
+  finishMessage = FinishInputEl.value;
+  if (finishMessage == "") {
+    finishMessage = "Time is up!";
   }
 }
