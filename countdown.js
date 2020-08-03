@@ -146,6 +146,7 @@ function updateTimeBar() {
   if (width > 100) {
     clearInterval(updateTimeBarInterval);
   } else if (width == 1.6666666666666667) {
+    //idk why this happens but it happens lol
     width = 0;
   } else {
     timeBarEl.style.width = width + "%";
