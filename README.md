@@ -4,7 +4,7 @@ A **small** app to create a countdown or a timer!
 
 > The **fastest** way to make a **small** countdown! ~ Floxyi
 
-You can also check out the [online version](https://floxyi.bplaced.net/) of this app.
+You can also check out the [online version](https://floxyi.bplaced.net/index.html) of this app.
 
 ## Features:
 

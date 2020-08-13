@@ -142,9 +142,6 @@ function updateFinishMessage() {
 updateTimeBarInterval = setInterval(updateTimeBar, 1);
 
 function updateTimeBar() {
-  //let width = 100 / (60 / ((time % 60) + 1));
-  //console.log(time);
-  //console.log(startingMinutes);
   let width = (time / (startingMinutes * 60)) * 100;
   if (width > 100) {
     clearInterval(updateTimeBarInterval);
