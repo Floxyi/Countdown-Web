@@ -1,37 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Countdown App</title>
-    <link rel="stylesheet" href="index.css" />
-    <script defer src="timer.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
-  </head>
-  <body>
-    <div id="settings">
-      <h2 id="settingsHeadline">Settings</h2>
-      <div id="settingsContent">
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Countdown App</title>
+  <link rel="stylesheet" href="index.css" />
+  <script defer src="timer.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <div id="settings">
+    <h2 id="settingsHeadline">Settings</h2>
+    <div id="settingsContent">
+      <fieldset>
+        <legend>General</legend>
+        <h4 id="settingsName">Coutdown-Text-Seize</h4>
+        <p id="settingsDescription">"75" is default</p>
+        <div id="settingsElement">
+          <input type="range" min="1" max="150" value="100" id="sliderTextSeize" />
+          <p id="textSeizeValue">100</p>
+        </div>
+        <br />
+        <hr />
+        <br />
+        <h4 id="settingsName">Coutdown-Headline</h4>
+        <p id="settingsDescription">"🕓 Countdown 🕗" is default</p>
+        <div id="settingsElement">
+          <input class="Input" id="HeadlineInput" placeholder="🕓 Countdown 🕗" />
+        </div>
+      </fieldset>
     </div>
-    <button id="trpBtn" type="button" onclick="manageSettings()"><img height="48" width="48" src="images/settings.png" /></button>
-    <center>
-      <div id="topMenu">
-        <a href="index.html"><ion-icon title="Coundown" id="menuItem" name="alarm-outline"></ion-icon></a>
-        <div id="vertical"></div>
-        <a href="timer.html"><ion-icon title="Timer" id="selectedMenuItem" name="timer-outline"></ion-icon></a>
-      </div>
-    </center>
-    <h1 id="headline">🕓 Timer 🕗</h1>
-    <!--<a href="timer.html">Timer</a>-->
-    <p id="timer">00:00:00</p>
-    <div class="btnContainer">
-      <button id="Btn" type="button" onclick="startTimer()"><ion-icon name="play-circle-outline"></ion-icon>Start</button>
-      <button id="Btn" type="button" onclick="stopTimer()"><ion-icon name="stop-circle-outline"></ion-icon>Stop</button>
-      <button id="Btn" type="button" onclick="restartTimer()"><ion-icon name="reload-circle-outline"></ion-icon>Restart</button>
+  </div>
+  <button id="trpBtn" type="button" onclick="manageSettings()"><img height="48" width="48"
+      src="images/settings.png" /></button>
+  <center>
+    <div id="topMenu">
+      <a href="index.html">
+        <ion-icon title="Coundown" id="menuItem" name="alarm-outline"></ion-icon>
+      </a>
+      <div id="vertical"></div>
+      <a href="timer.html">
+        <ion-icon title="Timer" id="selectedMenuItem" name="timer-outline"></ion-icon>
+      </a>
     </div>
-  </body>
+  </center>
+  <h1 id="headline">🕓 Timer 🕗</h1>
+  <!--<a href="timer.html">Timer</a>-->
+  <p id="timer">00:00:00</p>
+  <div class="btnContainer">
+    <button id="Btn" type="button" onclick="startTimer()">
+      <ion-icon name="play-circle-outline"></ion-icon>Start
+    </button>
+    <button id="Btn" type="button" onclick="stopTimer()">
+      <ion-icon name="stop-circle-outline"></ion-icon>Stop
+    </button>
+    <button id="Btn" type="button" onclick="restartTimer()">
+      <ion-icon name="reload-circle-outline"></ion-icon>Restart
+    </button>
+  </div>
+</body>
+
 </html>

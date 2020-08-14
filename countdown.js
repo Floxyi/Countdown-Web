@@ -151,5 +151,4 @@ function updateTimeBar() {
   } else {
     timeBarEl.style.width = width + "%";
   }
-  console.log(width);
 }

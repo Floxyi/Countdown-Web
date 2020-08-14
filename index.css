@@ -130,6 +130,7 @@ h1 {
   margin: 10px;
   box-sizing: border-box;
   border: none;
+  outline: 0 none;
   border-bottom: 2px solid #9e9e9e;
   box-shadow: none;
   padding-top: 10px;
@@ -199,6 +200,7 @@ h1 {
   border: none;
   cursor: pointer;
   position: absolute;
+  outline: 0 none;
   margin-top: 20px;
 }
 

@@ -7,6 +7,10 @@ let isStarted = false;
 let clockInterval;
 let time = 0;
 let hasTime = false;
+const HeadlineInputEl = document.getElementById("HeadlineInput");
+const headlineEl = document.getElementById("headline");
+const sliderTextSeizeEl = document.getElementById("sliderTextSeize");
+const textSeizeValueEl = document.getElementById("textSeizeValue");
 
 function startTimer() {
   if (isStarted == false) {
@@ -61,5 +65,22 @@ function manageSettings() {
   } else if (settingsElisHidden == false) {
     settingsElisHidden = true;
     settingsEl.style.opacity = 0;
+  }
+}
+
+sliderTextSeizeEl.oninput = function () {
+  textSeizeValueEl.innerHTML = this.value;
+  timerEl.style.fontSize = this.value + "px";
+};
+
+updateHeadlineInterval = setInterval(updateHeadline, 10);
+
+function updateHeadline() {
+  headline = HeadlineInputEl.value;
+  if (headline == headline) {
+    headlineEl.innerHTML = headline;
+  }
+  if (headline == "") {
+    headlineEl.innerHTML = "🕓 Countdown 🕗";
   }
 }
