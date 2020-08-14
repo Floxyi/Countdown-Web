@@ -5,12 +5,11 @@
   <meta charset="UTF-8" />
   <title>Countdown App</title>
   <link rel="stylesheet" href="index.css" />
-  <script defer src="timer.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
+  <div id="blend"></div>
   <div id="settings">
     <h2 id="settingsHeadline">Settings</h2>
     <div id="settingsContent">
@@ -26,9 +25,9 @@
         <hr />
         <br />
         <h4 id="settingsName">Coutdown-Headline</h4>
-        <p id="settingsDescription">"🕓 Countdown 🕗" is default</p>
+        <p id="settingsDescription">"🕓 Timer 🕗" is default</p>
         <div id="settingsElement">
-          <input class="Input" id="HeadlineInput" placeholder="🕓 Countdown 🕗" />
+          <input class="Input" id="HeadlineInput" placeholder="🕓 Timer 🕗" />
         </div>
       </fieldset>
     </div>
@@ -60,6 +59,7 @@
       <ion-icon name="reload-circle-outline"></ion-icon>Restart
     </button>
   </div>
+  <script src="timer.js" async defer></script>
 </body>
 
 </html>

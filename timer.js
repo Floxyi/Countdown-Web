@@ -1,8 +1,11 @@
 let startingMinutes;
 const timerEl = document.getElementById("timer");
 const settingsEl = document.getElementById("settings");
-settingsElisHidden = true;
+let settingsElisShown = false;
 settingsEl.style.opacity = 0;
+const blendEl = document.getElementById("blend");
+blendEl.style.opacity = 0;
+blendEl.style.pointerEvents = "none";
 let isStarted = false;
 let clockInterval;
 let time = 0;
@@ -14,10 +17,13 @@ const textSeizeValueEl = document.getElementById("textSeizeValue");
 
 function startTimer() {
   if (isStarted == false) {
-    isStarted = true;
-    timerEl.style.color = "#000000";
     clockInterval = setInterval(updateTimer, 1000);
-    console.log(0 % 60);
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      timerEl.style.color = "#ffffff";
+    } else {
+      timerEl.style.color = "#000000";
+    }
+    isStarted = true;
   }
 }
 
@@ -57,14 +63,20 @@ function updateTimer() {
   timerEl.innerHTML = `${hours}:${minutes}:${seconds}`;
   time++;
 }
-
+manageSettings();
 function manageSettings() {
-  if (settingsElisHidden == true) {
+  if (settingsElisShown == true) {
     settingsEl.style.opacity = 100;
-    settingsElisHidden = false;
-  } else if (settingsElisHidden == false) {
-    settingsElisHidden = true;
+    blendEl.style.opacity = "30%";
+    settingsEl.style.pointerEvents = "all";
+    blendEl.style.pointerEvents = "all";
+    settingsElisShown = false;
+  } else if (settingsElisShown == false) {
+    settingsElisShown = true;
     settingsEl.style.opacity = 0;
+    blendEl.style.opacity = 0;
+    settingsEl.style.pointerEvents = "none";
+    blendEl.style.pointerEvents = "none";
   }
 }
 
@@ -81,6 +93,6 @@ function updateHeadline() {
     headlineEl.innerHTML = headline;
   }
   if (headline == "") {
-    headlineEl.innerHTML = "🕓 Countdown 🕗";
+    headlineEl.innerHTML = "🕓 Timer 🕗";
   }
 }
