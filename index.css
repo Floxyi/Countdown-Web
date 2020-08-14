@@ -40,8 +40,8 @@ body {
 }
 
 #menuItem {
-  background-color: white;
-  border: 2px solid white;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
   border-radius: 10px;
   height: 50px;
   width: 50px;
@@ -49,6 +49,11 @@ body {
   padding: 5px;
   text-decoration: none;
   color: black;
+}
+
+#menuItem:hover {
+  background-color: #ebebeb;
+  border: 2px solid #ebebeb;
 }
 
 #selectedMenuItem {
